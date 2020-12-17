@@ -1,0 +1,36 @@
+import React from 'react';
+import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+const ButtonDiv = styled.button`
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0.7rem;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: rgb(127, 5, 80);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    &:hover {
+        border: 1px solid rgba(127, 5, 80, 0.4);
+        background-color:  #f9f9f9;
+        color: rgba(127, 5, 80, 0.5);
+    }
+`;
+const ButtonTitleDiv = styled.div`
+    margin-left: 10px;
+    color: #14161f;
+`;
+const Button = ({ title, icons, onClick }) => {
+    return (
+        <ButtonDiv onClick={onClick}>
+            <FontAwesomeIcon icon={icons} />
+            <ButtonTitleDiv>{title}</ButtonTitleDiv>
+        </ButtonDiv>
+    )
+}
+
+export default Button;
